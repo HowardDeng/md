@@ -647,6 +647,15 @@ export const useStore = defineStore(`store`, () => {
     }
   }
 
+  const cleanEditor = async () => {
+    try {
+      editor.value!.setValue(` `)
+    }
+    catch (error) {
+      console.log(`清空失败`, error)
+    }
+  }
+
   // 导入 Markdown 文档
   const importMarkdownContent = () => {
     const body = document.body
@@ -731,6 +740,7 @@ export const useStore = defineStore(`store`, () => {
 
     copyToClipboard,
     pasteFromClipboard,
+    cleanEditor,
 
     isOpenConfirmDialog,
     resetStyleConfirm,

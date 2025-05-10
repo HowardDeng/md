@@ -4,7 +4,7 @@ import { ClipboardPasteIcon, CopyIcon, TableIcon, UploadCloudIcon } from 'lucide
 
 const { toggleShowInsertFormDialog, toggleShowUploadImgDialog } = useDisplayStore()
 
-const { copyToClipboard, pasteFromClipboard } = useStore()
+const { copyToClipboard, pasteFromClipboard, cleanEditor } = useStore()
 </script>
 
 <template>
@@ -29,6 +29,10 @@ const { copyToClipboard, pasteFromClipboard } = useStore()
       <MenubarItem @click="pasteFromClipboard">
         <ClipboardPasteIcon class="mr-2 h-4 w-4" />
         粘贴
+      </MenubarItem>
+      <MenubarItem @click="cleanEditor">
+        <ClipboardPasteIcon class="mr-2 h-4 w-4" />
+        清空
       </MenubarItem>
     </MenubarContent>
   </MenubarMenu>
